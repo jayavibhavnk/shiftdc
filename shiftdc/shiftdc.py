@@ -169,7 +169,7 @@ class ShiftDC:
         with torch.no_grad():
             self.model(**inputs)
 
-        store.clear_hooks()
+        store.remove()
         return dict(store.activations)  # {layer_idx: tensor [1, d]}
 
     def _compute_patches(
