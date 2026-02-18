@@ -18,7 +18,8 @@ import torch
 from typing import Dict, List, Optional
 
 from .hooks import ActivationStore, ActivationPatcher
-from .safety_direction import _get_transformer_layers
+#from .safety_direction import _get_transformer_layers
+from .safety_direction import get_transformer_layers, load_safety_direction
 
 
 def _project_onto_direction(
