@@ -86,6 +86,8 @@ class ShiftDC:
 
     def _prepare_inputs(self, text, image=None):
         if image is not None:
+            if "<image>" not in text:
+                text = "<image>" + text
             inputs = self.processor(text=text, images=image, return_tensors="pt")
         else:
             inputs = self.processor(text=text, return_tensors="pt")
